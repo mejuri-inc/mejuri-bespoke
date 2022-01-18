@@ -1,45 +1,7 @@
 /* In this file you can modify everything */
 
-.bk-wid .hero img{
-  display: block;
-}
+/*
 
-.bk-wid .container{
-    background: #999;
-    margin: 0 auto;
-    max-width: 1440px;
-    padding: 0 16px;
-}
-@media (min-width: 768px) {
-    padding: 0 40px;
-}
+add css here 
 
-@media (min-width: 1024px) {
-    padding: 0 80px;
-}  
-.bk-wid h1 {
-    font-size: 30px;
-    font-family: 'Varela Round', sans-serif;
-    padding: 10px 0;
-}
-.bk-wid .list {
-    font-size: 17px;
-    color: #333;
-    margin-bottom: 80px;
-}
-
-.bk-wid .fake-brandon{
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 18px;
-    margin: 30px 0;
-    display: inline-block;
-}
-.bk-wid .fake-kapra{
-    font-family: "KapraNeue", sans-serif;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 50px;
-    margin: 30px 0;
-    display: inline-block;
-}
+*/
