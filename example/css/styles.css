@@ -1,5 +1,14 @@
 /* In this file you can modify everything */
 
+@font-face{
+    font-family: "PPEditorialNew";
+    src: url("../fonts/PPEditorialNew-Regular.woff2") format("woff2"), url("../fonts/PPEditorialNew-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+}
+
+
 .bk-wid .hero img{
   display: block;
 }
@@ -38,6 +47,14 @@
 .bk-wid .fake-kapra{
     font-family: "KapraNeue", sans-serif;
     text-transform: uppercase;
+    font-weight: 700;
+    font-size: 50px;
+    margin: 30px 0;
+    display: inline-block;
+}
+
+.bk-wid .fake-ppeditorialnew{
+    font-family: "PPEditorialNew", sans-serif;
     font-weight: 700;
     font-size: 50px;
     margin: 30px 0;
