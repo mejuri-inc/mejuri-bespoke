@@ -1,6 +1,6 @@
 /* In this file you can modify everything */
 
-@font-face{
+@font-face {
     font-family: "PPEditorialNew";
     src: url("../fonts/PPEditorialNew-Regular.woff2") format("woff2"), url("../fonts/PPEditorialNew-Regular.woff") format("woff");
     font-weight: 400;
@@ -8,43 +8,51 @@
     font-display: fallback;
 }
 
-
-.bk-wid .hero img{
-  display: block;
+.bk-wid .hero img {
+    display: block;
 }
 
-.bk-wid .container{
+.bk-wid .container {
     background: #999;
     margin: 0 auto;
     max-width: 1440px;
     padding: 0 16px;
 }
+
 @media (min-width: 768px) {
-    padding: 0 40px;
+    .bk-wid .container {
+        padding: 0 40px;
+    }
 }
 
 @media (min-width: 1024px) {
-    padding: 0 80px;
-}  
+    .bk-wid .container {
+        padding: 0 80px;
+    }
+}
+
+
 .bk-wid h1 {
     font-size: 30px;
     font-family: 'Varela Round', sans-serif;
     padding: 10px 0;
 }
+
 .bk-wid .list {
     font-size: 17px;
     color: #333;
     margin-bottom: 80px;
 }
 
-.bk-wid .fake-brandon{
+.bk-wid .fake-brandon {
     text-transform: uppercase;
     font-weight: 400;
     font-size: 18px;
     margin: 30px 0;
     display: inline-block;
 }
-.bk-wid .fake-kapra{
+
+.bk-wid .fake-kapra {
     font-family: "KapraNeue", sans-serif;
     text-transform: uppercase;
     font-weight: 700;
@@ -53,7 +61,7 @@
     display: inline-block;
 }
 
-.bk-wid .fake-ppeditorialnew{
+.bk-wid .fake-ppeditorialnew {
     font-family: "PPEditorialNew", sans-serif;
     font-weight: 700;
     font-size: 50px;
