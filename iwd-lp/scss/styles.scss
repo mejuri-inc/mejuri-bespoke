@@ -16,19 +16,19 @@
 
     .container {
         margin: 0 auto;
-        max-width: 1360px;
+        max-width: 1440px;
         padding: 64px 16px;
 
-        @media (width > 768px) {
+        @media (min-width: 768px) {
             padding: 64px 40px;
         }
 
-        @media (width > 1024px) {
+        @media (min-width: 1024px) {
             padding: 64px 80px;
         }
 
         &__content {
-            max-width: 1360px;
+            max-width: 1440px;
             margin: 0 auto;
         }
     }
@@ -77,7 +77,7 @@
         line-height: 50px;
         margin-bottom: 24px;
 
-        @media (width > 768px) {
+        @media (min-width: 768px) {
             font-size: 48px;
             line-height: 60px;
         }
@@ -88,7 +88,7 @@
         font-size: 16px;
         line-height: 24px;
 
-        @media (width > 768px) {
+        @media (min-width: 768px) {
             font-size: 18px;
             line-height: 26px;
         }
@@ -97,7 +97,7 @@
     p {
         margin-bottom: 11px;
 
-        @media (width > 768px) {
+        @media (min-width: 768px) {
             margin-bottom: 20px;
         }
     }
@@ -136,13 +136,14 @@
 
     .gallery {
         display: flex;
-        overflow-x: scroll;
+        overflow-x: auto;
         width: 100%;
 
-        @media (width > 1360px) {
-            .gallery {
-                justify-content: center;
-            }
+        @media (min-width: 1440px) {
+            justify-content: center;
+            margin-bottom: 30px;
+            min-height: max-content;
+            overflow-y: hidden;
         }
 
         &__item {
@@ -150,7 +151,7 @@
             figure {
                 width: 266px;
 
-                @media (width > 768px) {
+                @media (min-width: 768px) {
                     width: 312px;
                 }
             }
@@ -201,7 +202,7 @@
                         grid-area: img1;
                         width: 134px;
 
-                        @media (width > 768px) {
+                        @media (min-width: 768px) {
                             width: 235px;
                         }
                     }
@@ -210,7 +211,7 @@
                         grid-area: img2;
                         width: 132px;
 
-                        @media (width > 768px) {
+                        @media (min-width: 768px) {
                             width: 247px;
                         }
                     }
@@ -219,7 +220,7 @@
                         grid-area: img3;
                         width: 110px;
 
-                        @media (width > 768px) {
+                        @media (min-width: 768px) {
                             width: 187px;
                         }
                     }
@@ -228,7 +229,7 @@
                         grid-area: img4;
                         width: 134px;
 
-                        @media (width > 768px) {
+                        @media (min-width: 768px) {
                             width: 272px;
                         }
                     }
@@ -243,60 +244,6 @@
                 z-index: 2;
             }
 
-            /*             .row {
-                width: 100%;
-                display: flex;
-            }
-
-            &__content {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            &__images__left {
-                justify-content: flex-end;
-
-                figure {
-                    &:nth-of-type(1) {
-                        width: 134px;
-
-                        @media (width > 768px) {
-                            width: 235px;
-                        }
-                    }
-
-                    &:nth-of-type(2) {
-                        width: 132px;
-
-                        @media (width > 768px) {
-                            width: 247px;
-                        }
-                    }
-                }
-            }
-
-            &__images__right {
-                justify-content: flex-start;
-
-                figure {
-                    &:nth-of-type(1) {
-                        width: 110px;
-
-                        @media (width > 768px) {
-                            width: 187px;
-                        }
-                    }
-
-                    &:nth-of-type(2) {
-                        width: 134px;
-
-                        @media (width > 768px) {
-                            width: 272px;
-                        }
-                    }
-                }
-            } */
-
             h1 {
                 font-family: "KapraNeue", sans-serif; //PRO?
                 font-weight: 600;
@@ -306,13 +253,13 @@
                 text-transform: uppercase;
                 margin-bottom: 25px;
 
-                @media (width > 768px) {
+                @media (min-width: 768px) {
                     font-size: 100px;
                     line-height: 108px;
                     margin-bottom: 71px;
                 }
 
-                @media (width > 1024px) {
+                @media (min-width: 1024px) {
                     margin-bottom: 37px;
                 }
             }
@@ -325,7 +272,7 @@
                 color: #959595;
                 max-width: 290px;
 
-                @media (width > 768px) {
+                @media (min-width: 768px) {
                     font-size: 18px;
                     line-height: 23px;
                     max-width: 386px;
@@ -345,7 +292,7 @@
                 top: 43vh;
                 z-index: 3;
 
-                @media (width > 768px) {
+                @media (min-width: 768px) {
                     top: 50vh;
                 }
 
@@ -395,7 +342,7 @@
                     "why__footer__image";
                 padding: 64px 16px 0;
 
-                @media (width > 767px) {
+                @media (min-width: 767px) {
                     grid-template-columns: 40% 57%;
                     grid-template-rows: repeat(5, min-content);
                     grid-template-areas: "why__title why__image""why__text why__image""why__product__images why__image""why__product__text why__image""why__footer__image why__image";
@@ -403,7 +350,7 @@
                     padding: 64px 40px 0;
                 }
 
-                @media (width > 1024px) {
+                @media (min-width: 1024px) {
                     grid-template-columns: 45% 45%;
                     padding: 64px 80px 0;
                 }
@@ -424,7 +371,7 @@
             &__title {
                 grid-area: why__title;
 
-                @media (width > 1359px) {
+                @media (min-width: 1439px) {
                     h1 {
                         margin-left: 90px;
                     }
@@ -438,11 +385,11 @@
                 figure {
                     width: 342px;
 
-                    @media (width > 768px) {
+                    @media (min-width: 768px) {
                         width: 501px;
                     }
 
-                    @media (width > 1024px) {
+                    @media (min-width: 1024px) {
                         width: 571px;
                     }
                 }
@@ -472,7 +419,7 @@
             &__text {
                 grid-area: why__text;
 
-                @media (width > 1359px) {
+                @media (min-width: 1439px) {
                     margin-left: 90px;
                 }
 
@@ -488,12 +435,12 @@
                 grid-area: why__product__images;
                 margin-bottom: 35px;
 
-                @media (width > 768px) {
+                @media (min-width: 768px) {
                     justify-content: initial;
                     gap: 15px;
                 }
 
-                @media (width > 1359px) {
+                @media (min-width: 1439px) {
                     margin-left: 110px;
                 }
 
@@ -518,7 +465,7 @@
                 font-size: 18px;
                 line-height: 23px;
 
-                @media (width > 1359px) {
+                @media (min-width: 1439px) {
                     margin-left: 90px;
                 }
             }
@@ -530,11 +477,11 @@
                 margin-bottom: 0;
                 place-items: center self-start;
 
-                @media (width < 767px) {
+                @media (max-width: 767px) {
                     place-items: center;
                 }
 
-                @media (width > 768px) {
+                @media (min-width: 768px) {
                     grid-template-columns: 325px max-content;
 
                     figcaption {
@@ -542,7 +489,7 @@
                     }
                 }
 
-                @media (width > 1024px) {
+                @media (min-width: 1024px) {
                     grid-template-columns: 388px max-content;
                 }
             }
@@ -569,7 +516,7 @@
                 font-size: 24px;
                 line-height: 31px;
                 padding: 36px 10px 24px 0;
-                @media (width > 1360px) {
+                @media (min-width: 1440px) {
                     font-size: 28px;
                     line-height: 36px;
                 }
@@ -595,7 +542,7 @@
                 display: grid;
                 margin-bottom: 25px;
 
-                @media (width > 768px) {
+                @media (min-width: 768px) {
                     grid-template: auto / auto 52%;
                     margin-bottom: 40px;
                 }
@@ -607,7 +554,7 @@
                     font-size: 40px;
                     line-height: 50px;
 
-                    @media (width > 768px) {
+                    @media (min-width: 768px) {
                         font-size: 48px;
                         line-height: 60px;
                     }
@@ -616,7 +563,7 @@
             }
 
             .cards {
-                @media (width > 429px) {
+                @media (min-width: 429px) {
                     display: flex;
                 }
 
@@ -624,7 +571,7 @@
 
                     figure {
 
-                        @media (width > 1360px) {
+                        @media (min-width: 1440px) {
                             width: 421px;
                         }
 
@@ -637,12 +584,12 @@
                     figcaption {
                         margin: 16px 0 32px 0;
 
-                        @media (width > 768px) {
+                        @media (min-width: 768px) {
                             margin: 24px 0 32px 0;
                         }
                     }
 
-                    @media (width > 429px) {
+                    @media (min-width: 429px) {
                         &+.cards__item {
                             margin-left: 10px;
                         }
@@ -672,7 +619,7 @@
                     font-size: 24px;
                     line-height: 31px;
 
-                    @media (width > 768px) {
+                    @media (min-width: 768px) {
                         font-size: 28px;
                         line-height: 60px;
                     }

@@ -7,11 +7,6 @@
 }
 #iwd {
   cursor: url("https://res.cloudinary.com/mejuri-com/image/upload/v1643915113/FY22-IWD/Cursor-100x100.gif"), auto;
-  /* ---GENERAL--- */
-  /* ---GENERAL FONT--- */
-  /* ---GENERAL IMAGES--- */
-  /* ---CUSTOM SECTIONS--- */
-  /* ---Mobile rezise IMAGES--- */
 }
 #iwd .js-scroll {
   opacity: 0;
@@ -94,21 +89,21 @@
 }
 #iwd .container {
   margin: 0 auto;
-  max-width: 1360px;
+  max-width: 1440px;
   padding: 64px 16px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .container {
     padding: 64px 40px;
   }
 }
-@media (width > 1024px) {
+@media (min-width: 1024px) {
   #iwd .container {
     padding: 64px 80px;
   }
 }
 #iwd .container__content {
-  max-width: 1360px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 #iwd section {
@@ -148,7 +143,7 @@
   line-height: 50px;
   margin-bottom: 24px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd h1 {
     font-size: 48px;
     line-height: 60px;
@@ -159,7 +154,7 @@
   font-size: 16px;
   line-height: 24px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd p,
 #iwd h2 {
     font-size: 18px;
@@ -169,7 +164,7 @@
 #iwd p {
   margin-bottom: 11px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd p {
     margin-bottom: 20px;
   }
@@ -202,18 +197,21 @@
 }
 #iwd .gallery {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   width: 100%;
 }
-@media (width > 1360px) {
-  #iwd .gallery .gallery {
+@media (min-width: 1440px) {
+  #iwd .gallery {
     justify-content: center;
+    margin-bottom: 30px;
+    min-height: max-content;
+    overflow-y: hidden;
   }
 }
 #iwd .gallery__item figure {
   width: 266px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .gallery__item figure {
     width: 312px;
   }
@@ -225,72 +223,11 @@
 #iwd .gallery__item + .gallery__item {
   margin-left: 10px;
 }
-#iwd .section {
-  /* ------HERO SECTION------  */
-  /* ------WHY SECTION 01------  */
-  /* ------WHO SECTION 02------  */
-  /* ------VIDEO SECTION ------  */
-  /* ------WHAT SECTION 03------  */
-  /* ------DISCOVER SECTION 04------ */
-}
 #iwd .section__hero {
   min-height: calc(100vh - 120px);
   display: grid;
   position: relative;
   place-items: center;
-  /*             .row {
-      width: 100%;
-      display: flex;
-  }
-
-  &__content {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  &__images__left {
-      justify-content: flex-end;
-
-      figure {
-          &:nth-of-type(1) {
-              width: 134px;
-
-              @media (width > 768px) {
-                  width: 235px;
-              }
-          }
-
-          &:nth-of-type(2) {
-              width: 132px;
-
-              @media (width > 768px) {
-                  width: 247px;
-              }
-          }
-      }
-  }
-
-  &__images__right {
-      justify-content: flex-start;
-
-      figure {
-          &:nth-of-type(1) {
-              width: 110px;
-
-              @media (width > 768px) {
-                  width: 187px;
-              }
-          }
-
-          &:nth-of-type(2) {
-              width: 134px;
-
-              @media (width > 768px) {
-                  width: 272px;
-              }
-          }
-      }
-  } */
 }
 #iwd .section__hero.dark-bg {
   padding: 0;
@@ -313,7 +250,7 @@
   grid-area: img1;
   width: 134px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .section__hero__images figure:nth-of-type(1) {
     width: 235px;
   }
@@ -322,7 +259,7 @@
   grid-area: img2;
   width: 132px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .section__hero__images figure:nth-of-type(2) {
     width: 247px;
   }
@@ -331,7 +268,7 @@
   grid-area: img3;
   width: 110px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .section__hero__images figure:nth-of-type(3) {
     width: 187px;
   }
@@ -340,7 +277,7 @@
   grid-area: img4;
   width: 134px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .section__hero__images figure:nth-of-type(4) {
     width: 272px;
   }
@@ -361,14 +298,14 @@
   text-transform: uppercase;
   margin-bottom: 25px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .section__hero h1 {
     font-size: 100px;
     line-height: 108px;
     margin-bottom: 71px;
   }
 }
-@media (width > 1024px) {
+@media (min-width: 1024px) {
   #iwd .section__hero h1 {
     margin-bottom: 37px;
   }
@@ -381,7 +318,7 @@
   color: #959595;
   max-width: 290px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .section__hero h2 {
     font-size: 18px;
     line-height: 23px;
@@ -400,7 +337,7 @@
   top: 43vh;
   z-index: 3;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .section__hero .arrow {
     top: 50vh;
   }
@@ -434,7 +371,7 @@
   grid-template-areas: "why__title" "why__image" "why__text" "why__product__images" "why__product__text" "why__footer__image";
   padding: 64px 16px 0;
 }
-@media (width > 767px) {
+@media (min-width: 767px) {
   #iwd .section__why .container {
     grid-template-columns: 40% 57%;
     grid-template-rows: repeat(5, min-content);
@@ -443,7 +380,7 @@
     padding: 64px 40px 0;
   }
 }
-@media (width > 1024px) {
+@media (min-width: 1024px) {
   #iwd .section__why .container {
     grid-template-columns: 45% 45%;
     padding: 64px 80px 0;
@@ -462,7 +399,7 @@
 #iwd .section__why__title {
   grid-area: why__title;
 }
-@media (width > 1359px) {
+@media (min-width: 1439px) {
   #iwd .section__why__title h1 {
     margin-left: 90px;
   }
@@ -474,12 +411,12 @@
 #iwd .section__why__image figure {
   width: 342px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .section__why__image figure {
     width: 501px;
   }
 }
-@media (width > 1024px) {
+@media (min-width: 1024px) {
   #iwd .section__why__image figure {
     width: 571px;
   }
@@ -506,7 +443,7 @@
 #iwd .section__why__text {
   grid-area: why__text;
 }
-@media (width > 1359px) {
+@media (min-width: 1439px) {
   #iwd .section__why__text {
     margin-left: 90px;
   }
@@ -521,13 +458,13 @@
   grid-area: why__product__images;
   margin-bottom: 35px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .section__why__product__images {
     justify-content: initial;
     gap: 15px;
   }
 }
-@media (width > 1359px) {
+@media (min-width: 1439px) {
   #iwd .section__why__product__images {
     margin-left: 110px;
   }
@@ -546,7 +483,7 @@
   font-size: 18px;
   line-height: 23px;
 }
-@media (width > 1359px) {
+@media (min-width: 1439px) {
   #iwd .section__why__product__text {
     margin-left: 90px;
   }
@@ -558,12 +495,12 @@
   margin-bottom: 0;
   place-items: center self-start;
 }
-@media (width < 767px) {
+@media (max-width: 767px) {
   #iwd .section__why__footer__image {
     place-items: center;
   }
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .section__why__footer__image {
     grid-template-columns: 325px max-content;
   }
@@ -571,7 +508,7 @@
     margin-top: 5rem;
   }
 }
-@media (width > 1024px) {
+@media (min-width: 1024px) {
   #iwd .section__why__footer__image {
     grid-template-columns: 388px max-content;
   }
@@ -593,7 +530,7 @@
   line-height: 31px;
   padding: 36px 10px 24px 0;
 }
-@media (width > 1360px) {
+@media (min-width: 1440px) {
   #iwd .section__who p {
     font-size: 28px;
     line-height: 36px;
@@ -610,7 +547,7 @@
   display: grid;
   margin-bottom: 25px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .section__what__header {
     grid-template: auto/auto 52%;
     margin-bottom: 40px;
@@ -623,18 +560,18 @@
   font-size: 40px;
   line-height: 50px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .section__what__header h1 {
     font-size: 48px;
     line-height: 60px;
   }
 }
-@media (width > 429px) {
+@media (min-width: 429px) {
   #iwd .section__what .cards {
     display: flex;
   }
 }
-@media (width > 1360px) {
+@media (min-width: 1440px) {
   #iwd .section__what .cards__item figure {
     width: 421px;
   }
@@ -645,12 +582,12 @@
 #iwd .section__what .cards__item figcaption {
   margin: 16px 0 32px 0;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .section__what .cards__item figcaption {
     margin: 24px 0 32px 0;
   }
 }
-@media (width > 429px) {
+@media (min-width: 429px) {
   #iwd .section__what .cards__item + .cards__item {
     margin-left: 10px;
   }
@@ -671,7 +608,7 @@
   font-size: 24px;
   line-height: 31px;
 }
-@media (width > 768px) {
+@media (min-width: 768px) {
   #iwd .section__discover__header h1 {
     font-size: 28px;
     line-height: 60px;
