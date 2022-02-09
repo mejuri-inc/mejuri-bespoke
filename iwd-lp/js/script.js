@@ -1,6 +1,6 @@
 //ANIMATIONS ON SCROLL START--
 
-const scrollElements = document.querySelectorAll(".js-scroll");
+const scrollElements = document.querySelectorAll(".js-scroll", ".unactive-sentence");
 
 const elementInView = (el, dividend = 1) => {
    const elementTop = el.getBoundingClientRect().top;
@@ -21,10 +21,12 @@ const elementOutofView = (el) => {
 
 const displayScrollElement = (element) => {
    element.classList.add("scrolled");
+   element.classList.replace("unactive-sentence", "faded-sentence");
 };
 
 const hideScrollElement = (element) => {
    element.classList.remove("scrolled");
+   element.classList.replace("faded-sentence", "unactive-sentence");
 };
 
 const handleScrollAnimation = () => {
@@ -40,18 +42,72 @@ const handleScrollAnimation = () => {
 window.addEventListener("scroll", () => {
    handleScrollAnimation();
 });
-//ANIMATIONS ON SCROLL END--
 
 
+//WORD BY WORD ANIMATION START--
 
-//CHANGE WHAT SECTION IMAGE SRC START---
-document.querySelector("#cardOne a").addEventListener('mouseover', function () {
-   document.querySelector("#cardOne img").src = 'https://res.cloudinary.com/mejuri-com/image/upload/dpr_1.0,f_auto,q_60/v1643724738/FY22-IWD/FY22_IWD_LP_Page3_Onyx_Signet-HOVER.jpg';
+var observer = new MutationObserver(function (mutations, instance) {
+   let sentencesForFading = document.querySelectorAll(".faded-sentence");
+
+   if (sentencesForFading.length) {
+      console.log(sentencesForFading);
+      //const SENTENCE_DELAY = 1000;
+      //let sentencesForFading = document.querySelectorAll('.faded-sentence');
+
+      sentencesForFading.forEach(sentence => {
+         sentence.innerHTML = sentence.textContent.split(' ').map(word => '<span class="faded-word">' + word + '</span>').join(' ');
+         console.log("forEachSentence");
+      });
+
+      let wordsForFading = document.querySelectorAll('.faded-word');
+
+      wordsForFading.forEach(word => {
+         word.addEventListener('transitionend', startNextWordAnimation);
+      });
+
+      function startNextWordAnimation(e) {
+         let nextWord = e.target.nextElementSibling;
+         if (nextWord) {
+            nextWord.classList.add('faded-activated');
+         } else {
+            let nextSentence = e.target.parentElement.nextElementSibling;
+            startSentence(nextSentence);
+         }
+      }
+
+      startSentence(document.querySelector('.faded-sentence'));
+
+      function startSentence(sentenceElement) {
+         if (!sentenceElement) {
+            return;
+         }
+         setTimeout(() => {
+            sentencesForFading.forEach(word => {
+               word.querySelector('.faded-word').classList.add('faded-activated');
+            });
+
+         }/* , SENTENCE_DELAY */)
+      }
+
+
+      instance.disconnect();
+      return;
+   }
 });
-document.querySelector("#cardTwo a").addEventListener('mouseover', function () {
-   document.querySelector("#cardTwo img").src = 'https://res.cloudinary.com/mejuri-com/image/upload/dpr_1.0,f_auto,q_60/v1643724737/FY22-IWD/FY22_IWD_LP_Page3_Gold_Signet-HOVER.jpg';
+
+observer.observe(document, {
+   childList: true,
+   subtree: true
 });
-document.querySelector("#cardThree a").addEventListener('mouseover', function () {
-   document.querySelector("#cardThree img").src = 'https://res.cloudinary.com/mejuri-com/image/upload/dpr_1.0,f_auto,q_60/v1643724737/FY22-IWD/FY22_IWD_LP_Page3_Herringbone_Chain-HOVER.jpg';
+
+
+//JUMP NEXT PAGE
+let heroButton = document.querySelector(".section__hero button");
+
+heroButton.addEventListener("click", function () {
+   window.scroll({
+      top: 940,
+      left: 0,
+      behavior: 'smooth'
+   })
 });
-//---CHANGE WHAT SECTION IMAGE SRC END
