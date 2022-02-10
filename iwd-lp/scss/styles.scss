@@ -10,7 +10,7 @@ html {
     overflow-x: hidden;
 }
 
-#iwd {
+.iwd-lp {
     //cursor: url('https://res.cloudinary.com/mejuri-com/image/upload/v1643915113/FY22-IWD/Cursor-100x100.gif'), auto;	
 
     @import "_animations.scss";
@@ -55,17 +55,6 @@ html {
         font-size: 18px;
         line-height: 26px;
         margin-bottom: 16px;
-    }
-
-    a {
-        font-family: inherit;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 20px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        text-decoration: none;
     }
 
     h1,
@@ -118,9 +107,15 @@ html {
         text-align: left;
 
         &.name {
+            display: inline-block;
             font-size: 20px;
             line-height: 24px;
-            margin-bottom: 14px;
+            margin: 16px 0 12px 0;
+            text-transform: uppercase;
+
+            @media (min-width: 768px) {
+                margin: 24px 0 12px 0;
+            }
         }
 
         &.text {
@@ -137,6 +132,27 @@ html {
         }
     }
 
+    .text-link {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 500;
+        text-decoration: underline;
+        text-transform: uppercase;
+
+        &:hover {
+            color: #807D7D;
+            text-decoration: none;
+        }
+
+    }
+
+    .opacity-link:hover,
+    .opacity-link:hover figure {
+        opacity: 0.7;
+        transition: opacity 200ms ease-out 0s;
+        cursor: pointer;
+    }
+
     /* ---GENERAL IMAGES--- */
 
     .gallery {
@@ -145,6 +161,7 @@ html {
         width: 100%;
         -ms-overflow-style: none;
         scrollbar-width: none;
+
         &::-webkit-scrollbar {
             display: none;
         }
@@ -421,19 +438,15 @@ html {
 
             }
 
-            a {
-                all: unset;
-
-                figcaption {
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 21px;
-                    text-align: center;
-                    text-decoration: underline;
-                    color: #000000;
-                    letter-spacing: normal;
-                    margin-right: 16px;
-                }
+            a figcaption {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 21px;
+                text-align: center;
+                text-decoration: underline;
+                color: #000000;
+                letter-spacing: normal;
+                margin-right: 16px;
             }
 
             &__title {
@@ -466,19 +479,9 @@ html {
                     position: absolute;
                     bottom: 24px;
                     left: 24px;
-                    font-family: "KapraNeue", sans-serif;
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 23px;
-                    line-height: 28px;
-                    color: #FFFFFF;
-                    text-align: left;
 
-                    span {
-                        font-family: "PPEditorialNew", sans-serif;
-                        font-size: 14px;
+                    span.text {
                         line-height: 18px;
-                        color: #FAF7F0;
                         display: block;
                     }
                 }
@@ -506,8 +509,9 @@ html {
                 grid-template-rows: 1fr;
                 grid-area: why__product__images;
                 margin-bottom: 35px;
+
                 &.fade-in {
-                    animation-delay: .20s; 
+                    animation-delay: .20s;
                 }
 
                 @media (min-width: 768px) {
@@ -528,10 +532,6 @@ html {
                         margin-left: 20px;
                     }
 
-                    &:hover {
-                        opacity: .7;
-                        transition: opacity 200ms ease-out 0s;
-                    }
                 }
 
                 figure img {
@@ -543,23 +543,21 @@ html {
                 grid-area: why__product__text;
                 font-size: 18px;
                 line-height: 23px;
+
                 &.fade-in {
-                    animation-delay: .26s; 
+                    animation-delay: .26s;
                 }
 
                 @media (min-width: 1440px) {
                     margin-left: 90px;
                 }
-
-                a {
-                    text-decoration: underline;
-                }
             }
 
             &__footer__image {
                 margin-bottom: 0;
+
                 &.fade-in {
-                    animation-delay: .32s;  
+                    animation-delay: .32s;
                 }
 
                 a {
@@ -572,11 +570,6 @@ html {
                     @media (min-width: 768px) {
                         grid-template-columns: 325px max-content;
                         margin-right: 16px;
-
-                        &:hover {
-                            opacity: .7;
-                            transition: opacity 200ms ease-out 0s;
-                        }
 
                         figcaption {
                             margin-top: 5rem;
@@ -608,7 +601,7 @@ html {
 
             h2 {
                 margin-bottom: 40px;
-                padding: 0 35px;
+                padding: 16px 35px 0 35px;
             }
 
             p {
@@ -622,25 +615,6 @@ html {
                 }
             }
 
-            a {
-                text-decoration: underline;
-                &:hover {
-                    opacity: .7;
-                    transition: opacity 200ms ease-out 0s;
-                }
-
-            }
-        }
-
-        /* ------VIDEO SECTION ------  */
-
-        &__video {
-            display: grid;
-            place-content: center;
-
-            video {
-                width: 100%;
-            }
         }
 
         /* ------WHAT SECTION 03------  */
@@ -662,8 +636,9 @@ html {
                     font-weight: normal;
                     font-size: 40px;
                     line-height: 50px;
+
                     &.fade-in {
-                        animation-delay: .16s;  
+                        animation-delay: .16s;
                     }
 
                     @media (min-width: 768px) {
@@ -687,9 +662,16 @@ html {
                     position: relative;
 
                     figure {
+                        margin-bottom: 40px;
+
                         @media (min-width: 1440px) {
                             width: 421px;
                         }
+                    }
+
+                    a {
+                        text-decoration: none;
+                        letter-spacing: 1px;
                     }
 
                     figcaption {
@@ -697,10 +679,12 @@ html {
                         font-size: 28px;
                         line-height: 42px;
                         text-transform: capitalize;
-                        margin: 16px 0 32px 0;
+                        margin: 16px 0;
+                        letter-spacing: normal;
+
 
                         @media (min-width: 768px) {
-                            margin: 24px 0 32px 0;
+                            margin: 16px 0 24px 0;
                         }
                     }
 
@@ -711,20 +695,16 @@ html {
                             position: absolute;
                             left: 0;
                         }
-                    }
 
-                    a:hover img:nth-of-type(1) {
-                        opacity: 0;
-                        transition: .5s ease-out;
-                    }
-
-                    a span {
-                        text-decoration: underline;
+                        &:hover:nth-of-type(1) {
+                            opacity: 0;
+                            transition: .5s ease-out;
+                        }
                     }
 
                     @media (min-width: 429px) {
                         &+.cards__item {
-                            margin-left: 10px;
+                            margin-left: 8px;
                         }
                     }
 
@@ -746,6 +726,11 @@ html {
         /* ------DISCOVER SECTION 04------ black*/
 
         &__discover {
+
+            a {
+                font-weight: 500;
+            }
+
             .container__content {
                 overflow: hidden;
                 max-width: 1280px;
@@ -777,18 +762,14 @@ html {
 
                 a {
                     text-align: right;
-                    text-decoration: underline;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
                 }
 
             }
 
             figure {
                 opacity: 1;
-            }
-
-            a:hover figure {
-                opacity: .7;
-                transition: opacity 200ms ease-out 0s;
             }
 
             figcaption {
@@ -799,6 +780,12 @@ html {
                 letter-spacing: 1px;
                 text-transform: uppercase;
                 margin: 24px 0;
+            }
+
+            a.opacity-link {
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: 1px;
             }
 
         }
@@ -828,4 +815,11 @@ html {
         transition: opacity 0.5s ease 0s;
     }
 
+}
+
+
+/* ------VIDEO SECTION ------  */
+
+video {
+    width: 100%;
 }
