@@ -1,6 +1,6 @@
 //ANIMATIONS ON SCROLL START--
 
-const scrollElements = document.querySelectorAll(".js-scroll", ".unactive-sentence");
+const scrollElements = document.querySelectorAll(".js-scroll");
 
 const elementInView = (el, dividend = 1) => {
    const elementTop = el.getBoundingClientRect().top;
@@ -21,12 +21,10 @@ const elementOutofView = (el) => {
 
 const displayScrollElement = (element) => {
    element.classList.add("scrolled");
-   element.classList.replace("unactive-sentence", "faded-sentence");
 };
 
 const hideScrollElement = (element) => {
    element.classList.remove("scrolled");
-   element.classList.replace("faded-sentence", "unactive-sentence");
 };
 
 const handleScrollAnimation = () => {
@@ -45,8 +43,7 @@ window.addEventListener("scroll", () => {
 
 
 //WORD BY WORD ANIMATION START--
-
-var observer = new MutationObserver(function (mutations, instance) {
+const observer = new IntersectionObserver(entries => {
    let sentencesForFading = document.querySelectorAll(".faded-sentence");
 
    if (sentencesForFading.length) {
@@ -95,11 +92,7 @@ var observer = new MutationObserver(function (mutations, instance) {
    }
 });
 
-observer.observe(document, {
-   childList: true,
-   subtree: true
-});
-
+observer.observe(document.querySelector('.faded-sentence'));
 
 //JUMP NEXT PAGE
 let heroButton = document.querySelector(".section__hero button");
