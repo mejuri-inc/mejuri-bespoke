@@ -46,7 +46,6 @@ html {
         }
     }
 
-
     section {
         background-color: #fff;
         color: #000000;
@@ -375,11 +374,11 @@ html {
 
                         &.animated {
                             opacity: 0;
-                            animation: hero-word-animation 5s step-start infinite 1s;
+                            animation: hero-word-animation 5s step-start infinite .01s;
                             position: absolute;
 
                             &:nth-child(1) {
-                                animation-delay: 5s;
+                                animation-delay: .01s;
                             }
 
                             &:nth-child(2) {
@@ -550,7 +549,7 @@ html {
 
             &__product__images {
                 display: grid;
-                grid-template-columns: 145px 190px;
+                grid-template-columns: 143px 185px;
                 grid-template-rows: 1fr;
                 grid-area: why__product__images;
                 margin-bottom: 35px;
@@ -675,7 +674,7 @@ html {
                 display: grid;
                 margin-bottom: 25px;
 
-                @media (min-width: 768px) {
+                @media (min-width: 640px) {
                     grid-template: auto / auto 52%;
                     margin-bottom: 40px;
                 }
@@ -691,7 +690,7 @@ html {
                         animation-delay: .16s;
                     }
 
-                    @media (min-width: 768px) {
+                    @media (min-width: 640px) {
                         font-size: 48px;
                         line-height: 60px;
                     }
@@ -704,7 +703,7 @@ html {
             }
 
             .cards {
-                @media (min-width: 429px) {
+                @media (min-width: 640px) {
                     display: flex;
                 }
 
@@ -733,7 +732,7 @@ html {
                         letter-spacing: normal;
 
 
-                        @media (min-width: 768px) {
+                        @media (min-width: 640px) {
                             margin: 16px 0 24px 0;
                         }
                     }
@@ -752,7 +751,7 @@ html {
                         }
                     }
 
-                    @media (min-width: 429px) {
+                    @media (min-width: 640px) {
                         &+.cards__item {
                             margin-left: 8px;
                         }
@@ -866,7 +865,6 @@ html {
     }
 
 }
-
 
 /* ------VIDEO SECTION ------  */
 
