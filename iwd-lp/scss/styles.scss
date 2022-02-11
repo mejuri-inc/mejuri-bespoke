@@ -172,6 +172,7 @@ html {
     .gallery {
         display: flex;
         overflow-x: auto;
+        overflow-y: hidden;
         width: 100%;
         -ms-overflow-style: none;
         scrollbar-width: none;
