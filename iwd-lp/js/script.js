@@ -1,6 +1,6 @@
 //ANIMATIONS ON SCROLL START--
 
-const scrollElements = document.querySelectorAll(".js-scroll");
+const scrollElements = document.querySelectorAll(".js-scroll", ".faded-sentence");
 
 const elementInView = (el, dividend = 1) => {
    const elementTop = el.getBoundingClientRect().top;
@@ -42,57 +42,46 @@ window.addEventListener("scroll", () => {
 });
 
 
-//WORD BY WORD ANIMATION START--
-const observer = new IntersectionObserver(entries => {
-   let sentencesForFading = document.querySelectorAll(".faded-sentence");
+/* //WORD BY WORD ANIMATION START--
 
-   if (sentencesForFading.length) {
-      console.log(sentencesForFading);
-      //const SENTENCE_DELAY = 1000;
-      //let sentencesForFading = document.querySelectorAll('.faded-sentence');
+const SENTENCE_DELAY = 1000;
+let sentencesForFading = document.querySelectorAll('.faded-sentence');
 
-      sentencesForFading.forEach(sentence => {
-         sentence.innerHTML = sentence.textContent.split(' ').map(word => '<span class="faded-word">' + word + '</span>').join(' ');
-         console.log("forEachSentence");
-      });
+if (sentencesForFading) {
+   sentencesForFading.forEach(sentence => {
+      sentence.innerHTML = sentence.textContent.split(' ').map(word => '<span class="faded-word">' + word + '</span>').join(' ');
+   });
 
-      let wordsForFading = document.querySelectorAll('.faded-word');
+   let wordsForFading = document.querySelectorAll('.faded-word');
 
-      wordsForFading.forEach(word => {
-         word.addEventListener('transitionend', startNextWordAnimation);
-      });
+   wordsForFading.forEach(word => {
+      word.addEventListener('transitionend', startNextWordAnimation);
+   });
 
-      function startNextWordAnimation(e) {
-         let nextWord = e.target.nextElementSibling;
-         if (nextWord) {
-            nextWord.classList.add('faded-activated');
-         } else {
-            let nextSentence = e.target.parentElement.nextElementSibling;
-            startSentence(nextSentence);
-         }
+   function startNextWordAnimation(e) {
+      let nextWord = e.target.nextElementSibling;
+      if (nextWord) {
+         nextWord.classList.add('faded-activated');
+      } else {
+         let nextSentence = e.target.parentElement.nextElementSibling;
+         startSentence(nextSentence);
       }
-
-      startSentence(document.querySelector('.faded-sentence'));
-
-      function startSentence(sentenceElement) {
-         if (!sentenceElement) {
-            return;
-         }
-         setTimeout(() => {
-            sentencesForFading.forEach(word => {
-               word.querySelector('.faded-word').classList.add('faded-activated');
-            });
-
-         }/* , SENTENCE_DELAY */)
-      }
-
-
-      instance.disconnect();
-      return;
    }
-});
 
-observer.observe(document.querySelector('.faded-sentence'));
+   startSentence(document.querySelector('.faded-sentence'));
+
+   function startSentence(sentenceElement) {
+      if (!sentenceElement) {
+         return;
+      }
+      setTimeout(() => {
+         sentencesForFading.forEach(word => {
+            word.querySelector('.faded-word').classList.add('faded-activated');
+         });
+
+      }, SENTENCE_DELAY)
+   }
+} */
 
 //JUMP NEXT PAGE
 let heroButton = document.querySelector(".section__hero button");
