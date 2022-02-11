@@ -104,6 +104,7 @@
   }
 
 }
+
 //______________________
 
 .js-scroll {
@@ -131,19 +132,27 @@
   &.fade-in-left {
     animation: fade-in-left .8s ease-out both;
   }
-  
-  .faded-word {
-    display: inline-block;
-    transform: translateY(65%);
-    opacity: 0;
+
+  &.who-gallery-animation {
+    animation: fade-in-bottom .8s ease-out both;
+
+    @media (min-width: 768px) {
+      animation: fade-in-left .8s ease-out both;
+    }
   }
 
-  .faded-activated {
-    transition: opacity .3s, transform .4s, color 2s .4s;
-    opacity: 1;
-    transform: translateY(0);
-  }
+}
 
+.faded-word {
+  display: inline-block;
+  transform: translateY(65%);
+  opacity: 0;
+}
+
+.faded-activated {
+  transition: opacity .3s, transform .4s, color 2s .4s;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .faded-right-word {
