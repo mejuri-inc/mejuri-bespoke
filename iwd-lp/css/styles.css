@@ -287,6 +287,7 @@ html {
 .iwd-lp .gallery {
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden;
   width: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -487,11 +488,11 @@ html {
 }
 .iwd-lp .section__hero__content h1 span.animated {
   opacity: 0;
-  animation: hero-word-animation 5s step-start infinite 1s;
+  animation: hero-word-animation 5s step-start infinite 0.01s;
   position: absolute;
 }
 .iwd-lp .section__hero__content h1 span.animated:nth-child(1) {
-  animation-delay: 5s;
+  animation-delay: 0.01s;
 }
 .iwd-lp .section__hero__content h1 span.animated:nth-child(2) {
   animation-delay: 6s;
@@ -627,7 +628,7 @@ html {
 }
 .iwd-lp .section__why__product__images {
   display: grid;
-  grid-template-columns: 145px 190px;
+  grid-template-columns: 143px 185px;
   grid-template-rows: 1fr;
   grid-area: why__product__images;
   margin-bottom: 35px;
@@ -731,7 +732,7 @@ html {
   display: grid;
   margin-bottom: 25px;
 }
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .iwd-lp .section__what header {
     grid-template: auto/auto 52%;
     margin-bottom: 40px;
@@ -747,7 +748,7 @@ html {
 .iwd-lp .section__what header h1.fade-in {
   animation-delay: 0.16s;
 }
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .iwd-lp .section__what header h1 {
     font-size: 48px;
     line-height: 60px;
@@ -756,7 +757,7 @@ html {
 .iwd-lp .section__what header div.fade-in {
   animation-delay: 0.32s;
 }
-@media (min-width: 429px) {
+@media (min-width: 640px) {
   .iwd-lp .section__what .cards {
     display: flex;
   }
@@ -784,7 +785,7 @@ html {
   margin: 16px 0;
   letter-spacing: normal;
 }
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .iwd-lp .section__what .cards__item figcaption {
     margin: 16px 0 24px 0;
   }
@@ -800,7 +801,7 @@ html {
   opacity: 0;
   transition: 0.5s ease-out;
 }
-@media (min-width: 429px) {
+@media (min-width: 640px) {
   .iwd-lp .section__what .cards__item + .cards__item {
     margin-left: 8px;
   }
