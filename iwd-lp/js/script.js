@@ -1,6 +1,6 @@
 //ANIMATIONS ON SCROLL START--
 
-const scrollElements = document.querySelectorAll(".js-scroll", ".unactive-sentence");
+const scrollElements = document.querySelectorAll(".js-scroll", ".faded-sentence");
 
 const elementInView = (el, dividend = 1) => {
    const elementTop = el.getBoundingClientRect().top;
@@ -21,12 +21,10 @@ const elementOutofView = (el) => {
 
 const displayScrollElement = (element) => {
    element.classList.add("scrolled");
-   element.classList.replace("unactive-sentence", "faded-sentence");
 };
 
 const hideScrollElement = (element) => {
    element.classList.remove("scrolled");
-   element.classList.replace("faded-sentence", "unactive-sentence");
 };
 
 const handleScrollAnimation = () => {
@@ -44,62 +42,46 @@ window.addEventListener("scroll", () => {
 });
 
 
-//WORD BY WORD ANIMATION START--
+/* //WORD BY WORD ANIMATION START--
 
-var observer = new MutationObserver(function (mutations, instance) {
-   let sentencesForFading = document.querySelectorAll(".faded-sentence");
+const SENTENCE_DELAY = 1000;
+let sentencesForFading = document.querySelectorAll('.faded-sentence');
 
-   if (sentencesForFading.length) {
-      console.log(sentencesForFading);
-      //const SENTENCE_DELAY = 1000;
-      //let sentencesForFading = document.querySelectorAll('.faded-sentence');
+if (sentencesForFading) {
+   sentencesForFading.forEach(sentence => {
+      sentence.innerHTML = sentence.textContent.split(' ').map(word => '<span class="faded-word">' + word + '</span>').join(' ');
+   });
 
-      sentencesForFading.forEach(sentence => {
-         sentence.innerHTML = sentence.textContent.split(' ').map(word => '<span class="faded-word">' + word + '</span>').join(' ');
-         console.log("forEachSentence");
-      });
+   let wordsForFading = document.querySelectorAll('.faded-word');
 
-      let wordsForFading = document.querySelectorAll('.faded-word');
+   wordsForFading.forEach(word => {
+      word.addEventListener('transitionend', startNextWordAnimation);
+   });
 
-      wordsForFading.forEach(word => {
-         word.addEventListener('transitionend', startNextWordAnimation);
-      });
-
-      function startNextWordAnimation(e) {
-         let nextWord = e.target.nextElementSibling;
-         if (nextWord) {
-            nextWord.classList.add('faded-activated');
-         } else {
-            let nextSentence = e.target.parentElement.nextElementSibling;
-            startSentence(nextSentence);
-         }
+   function startNextWordAnimation(e) {
+      let nextWord = e.target.nextElementSibling;
+      if (nextWord) {
+         nextWord.classList.add('faded-activated');
+      } else {
+         let nextSentence = e.target.parentElement.nextElementSibling;
+         startSentence(nextSentence);
       }
-
-      startSentence(document.querySelector('.faded-sentence'));
-
-      function startSentence(sentenceElement) {
-         if (!sentenceElement) {
-            return;
-         }
-         setTimeout(() => {
-            sentencesForFading.forEach(word => {
-               word.querySelector('.faded-word').classList.add('faded-activated');
-            });
-
-         }/* , SENTENCE_DELAY */)
-      }
-
-
-      instance.disconnect();
-      return;
    }
-});
 
-observer.observe(document, {
-   childList: true,
-   subtree: true
-});
+   startSentence(document.querySelector('.faded-sentence'));
 
+   function startSentence(sentenceElement) {
+      if (!sentenceElement) {
+         return;
+      }
+      setTimeout(() => {
+         sentencesForFading.forEach(word => {
+            word.querySelector('.faded-word').classList.add('faded-activated');
+         });
+
+      }, SENTENCE_DELAY)
+   }
+} */
 
 //JUMP NEXT PAGE
 let heroButton = document.querySelector(".section__hero button");
