@@ -17,7 +17,8 @@ html {
 
     /* ---GENERAL--- */
 
-    .container {
+    .container,
+    .container-np {
         margin: 0 auto;
         max-width: 1440px;
         padding: 64px 16px;
@@ -35,6 +36,16 @@ html {
             max-width: 1440px;
         }
     }
+
+    .container-np {
+        padding: 64px 0 !important;
+
+        header {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+
 
     section {
         background-color: #fff;
@@ -336,12 +347,14 @@ html {
 
                     span {
                         min-width: 200px;
+
                         @media (min-width: 768px) {
                             min-width: 460px;
                         }
 
                         &.border {
                             display: inline-block;
+
                             &::before {
                                 content: "";
                                 border-bottom: 1px solid #fff;
@@ -350,6 +363,7 @@ html {
                                 left: 85px;
                                 top: 45px;
                                 width: 200px;
+
                                 @media (min-width: 768px) {
                                     left: 200px;
                                     top: 95px;
@@ -358,28 +372,28 @@ html {
                             }
                         }
 
-    
+
                         &.animated {
                             opacity: 0;
                             animation: hero-word-animation 5s step-start infinite 1s;
                             position: absolute;
-    
+
                             &:nth-child(1) {
                                 animation-delay: 5s;
                             }
-    
+
                             &:nth-child(2) {
                                 animation-delay: 6s;
                             }
-    
+
                             &:nth-child(3) {
                                 animation-delay: 7s;
                             }
-    
+
                             &:nth-child(4) {
                                 animation-delay: 8s;
                             }
-    
+
                             &:nth-child(5) {
                                 animation-delay: 9s;
                             }
@@ -459,6 +473,7 @@ html {
                     justify-content: space-between;
                     padding: 64px 40px 0;
                 }
+
                 @media (min-width: 1024px) {
                     grid-template-columns: 40% 501px;
                 }
@@ -548,6 +563,7 @@ html {
                     justify-content: initial;
                     grid-template-columns: 115px 160px;
                 }
+
                 @media (min-width: 1024px) {
                     grid-template-columns: 145px 190px;
                 }
@@ -776,8 +792,6 @@ html {
                 align-items: baseline;
                 justify-content: space-between;
                 margin-bottom: 20px;
-                padding-left: 16px;
-                padding-right: 16px;
 
                 @media (min-width: 768px) {
                     grid-template-columns: auto 33%;
@@ -849,11 +863,6 @@ html {
     .visible {
         opacity: 1;
         transition: opacity 0.5s ease 0s;
-    }
-
-    .ph-0 {
-        padding-right: 0;
-        padding-left: 0;
     }
 
 }
