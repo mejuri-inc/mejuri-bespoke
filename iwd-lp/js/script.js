@@ -44,11 +44,27 @@ window.addEventListener("scroll", () => {
 
 //JUMP NEXT PAGE
 let heroButton = document.querySelector(".section__hero button");
+let topDistance = 100;
 
 heroButton.addEventListener("click", function () {
    window.scroll({
-      top: 940,
+      top: topDistance,
       left: 0,
       behavior: 'smooth'
    })
 });
+
+function scrollQuery() {
+   if (window.matchMedia("(min-width: 640px)").matches) {
+      topDistance = 640;
+      console.log(topDistance);
+   } else if (window.matchMedia("(min-width: 1024px)").matches) {
+      topDistance = 1040;
+      console.log(topDistance);
+   } else if (window.matchMedia("(min-width: 1360px)").matches) {
+      topDistance = 1940;
+      console.log(topDistance);
+   }
+}
+
+scrollQuery();
