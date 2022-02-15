@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
    const handleScrollAnimation = () => {
       scrollElements.forEach((el) => {
-         if (elementInView(el, 1.25)) {
+         if (elementInView(el, 1)) {
             displayScrollElement(el);
          } else if (elementOutofView(el)) {
             hideScrollElement(el)
@@ -41,19 +41,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
       handleScrollAnimation();
    });
 
-   //JUMP NEXT PAGE
-
-   let heroButton = document.querySelector(".section__hero button");
-   let topDistance = 890;
-
-   heroButton.addEventListener("click", function () {
-      window.scroll({
-         top: topDistance,
-         left: 0,
-         behavior: 'smooth'
-      })
-   });
-
+   //JUMP TO WHY SECTION
+   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+          });
+      });
+  });
 
 });
 
