@@ -240,8 +240,10 @@ html {
                 display: grid;
                 grid-template-areas: "img1 . img2""img3 . img4";
                 place-content: space-between;
-                width: 100vw;
-                height: calc(100vh - 120px);
+                /*                 width: 100vw;
+                height: calc(100vh - 120px); */
+                width: 100%;
+                height: 100%;
                 overflow: hidden;
                 z-index: 1;
 
@@ -260,7 +262,7 @@ html {
                             width: 235px;
                         }
 
-                        @media (min-width: 1024px) and (max-height: 720px) {
+                        @media (min-width: 1024px) and (max-height: 860px) {
                             width: calc(235px - 18%);
                         }
 
@@ -271,6 +273,8 @@ html {
                         animation-delay: .25s;
                         width: 118px;
                         place-self: start end;
+/*                         position: relative;
+                        top: 40px; */
 
                         @media (max-height: 720px) {
                             width: calc(118px - 18%);
@@ -278,9 +282,11 @@ html {
 
                         @media (min-width: 1024px) {
                             width: 187px;
+/*                             top: 0;
+                            right: 123px; */
                         }
 
-                        @media (min-width: 1024px) and (max-height: 720px) {
+                        @media (min-width: 1024px) and (max-height: 860px) {
                             width: calc(187px - 18%);
                         }
                     }
@@ -290,6 +296,8 @@ html {
                         animation-delay: .50s;
                         width: 132px;
                         place-self: end start;
+/*                         position: relative;
+                        bottom: 102px; */
 
                         @media (max-height: 720px) {
                             width: calc(132px - 18%);
@@ -297,30 +305,43 @@ html {
 
                         @media (min-width: 1024px) {
                             width: 247px;
+                            //bottom: 107px;
                         }
 
-                        @media (min-width: 1024px) and (max-height: 720px) {
+                        @media (min-width: 1024px) and (max-height: 860px) {
                             width: calc(247px - 18%);
                         }
+
+/*                         @media (min-width: 1440px) {
+                            bottom: 0;
+                            left: 145px;
+                        } */
                     }
 
                     &:nth-of-type(4) {
                         grid-area: img4;
                         animation-delay: .75s;
                         width: 134px;
+                        place-self: end;
+/*                         position: relative;
+                        bottom: 44px; */
 
                         @media (max-height: 720px) {
                             width: calc(134px - 18%);
-                            place-self: end;
                         }
 
                         @media (min-width: 1024px) {
                             width: 272px;
+                            //bottom: 140px;
                         }
 
-                        @media (min-width: 1024px) and (max-height: 720px) {
+                        @media (min-width: 1024px) and (max-height: 860px) {
                             width: calc(272px - 18%);
                         }
+
+/*                         @media (min-width: 1440px) {
+                            bottom: 0;
+                        } */
                     }
                 }
             }
@@ -336,23 +357,38 @@ html {
                     font-family: "KapraNeue", sans-serif;
                     font-weight: 600;
                     font-style: normal;
-                    font-size: 40px;
-                    line-height: 51px;
+                    font-size: 30px;
+                    line-height: 41px;
                     text-transform: uppercase;
                     animation: fade-in 2s linear 1.5s both;
 
+                    @media (min-width: 375px) {
+                        font-size: 40px;
+                        line-height: 51px;
+                    }
+
                     @media (min-width: 768px) {
+                        font-size: 90px;
+                        line-height: 98px;
+                        margin: 30px 0 16px;
+                    }
+
+                    @media (min-width: 1024px) {
                         font-size: 100px;
                         line-height: 108px;
-                        margin-bottom: 71px;
+                        margin: 0 0 71px;
                     }
 
                     @media (min-width: 1280px) {
-                        margin-bottom: 37px;
+                        margin: 0 0 37px;
                     }
 
                     span {
-                        min-width: 200px;
+                        min-width: 130px;
+
+                        @media (min-width: 375px) {
+                            min-width: 200px;
+                        }
 
                         @media (min-width: 768px) {
                             min-width: 460px;
@@ -366,9 +402,15 @@ html {
                                 border-bottom: 1px solid #fff;
                                 height: 1px;
                                 position: absolute;
-                                left: 85px;
-                                top: 45px;
-                                width: 200px;
+                                left: 60px;
+                                top: 37px;
+                                width: 130px;
+
+                                @media (min-width: 375px) {
+                                    width: 200px;
+                                    left: 85px;
+                                    top: 45px;
+                                }
 
                                 @media (min-width: 768px) {
                                     left: 200px;
@@ -848,10 +890,11 @@ html {
     }
 
     /* ---Mobile rezise IMAGES--- */
-    @media (min-width: 376px) and (max-width: 767px) {
+    @media (max-width: 767px) {
         figure.resize {
             text-align: center;
             width: 100%;
+            max-width: 100%;
         }
     }
 
@@ -871,7 +914,7 @@ html {
     }
 
     [type="button"] {
-        appearance: none;
+        -webkit-appearance: none;
     }
 
 }
