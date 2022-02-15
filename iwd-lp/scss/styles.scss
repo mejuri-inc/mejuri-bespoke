@@ -660,6 +660,7 @@ html {
                     grid-template-columns: auto max-content;
                     margin: 0;
                     place-items: center self-start;
+                    width: fit-content;
 
                     @media (min-width: 768px) {
                         grid-template-columns: 325px max-content;
