@@ -38,11 +38,18 @@ html {
     }
 
     .container-np {
-        padding: 64px 0 !important;
+        padding: 64px 0 64px 16px;
+
+        @media (min-width: 768px) {
+            padding: 64px 0 64px 40px;
+        }
 
         header {
-            padding-left: 16px;
             padding-right: 16px;
+
+            @media (min-width: 768px) {
+                padding-right: 40px;
+            }
         }
     }
 
@@ -155,7 +162,6 @@ html {
 
         &:hover {
             color: #807D7D;
-            text-decoration: none;
         }
 
     }
@@ -375,12 +381,8 @@ html {
 
                         &.animated {
                             opacity: 0;
-                            animation: hero-word-animation 5s step-start infinite .01s;
+                            animation: hero-word-animation 5s step-start infinite;
                             position: absolute;
-
-                            &:nth-child(1) {
-                                animation-delay: .01s;
-                            }
 
                             &:nth-child(2) {
                                 animation-delay: 6s;
@@ -607,14 +609,14 @@ html {
                 margin-bottom: 0;
 
                 &.fade-in {
-                    animation-delay: .32s;
+                    animation-delay: .20s;
                 }
 
                 a {
                     grid-area: why__footer__image;
                     display: grid;
                     grid-template-columns: auto max-content;
-                    margin-bottom: 0;
+                    margin: 0;
                     place-items: center self-start;
 
                     @media (min-width: 768px) {
@@ -779,6 +781,11 @@ html {
 
             a {
                 font-weight: 500;
+
+                &.opacity-link {
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
             }
 
             .container__content {
@@ -810,12 +817,15 @@ html {
                     }
                 }
 
-                a {
+                a.opacity-link {
                     text-align: right;
-                    letter-spacing: 1px;
-                    text-transform: uppercase;
+                    text-decoration: underline;
                 }
 
+            }
+
+            a.opacity-link {
+                text-decoration: none;
             }
 
             figure {
@@ -830,12 +840,7 @@ html {
                 letter-spacing: 1px;
                 text-transform: uppercase;
                 margin: 24px 0;
-            }
 
-            a.opacity-link {
-                text-decoration: none;
-                text-transform: uppercase;
-                letter-spacing: 1px;
             }
 
         }
@@ -863,6 +868,10 @@ html {
     .visible {
         opacity: 1;
         transition: opacity 0.5s ease 0s;
+    }
+
+    [type="button"] {
+        appearance: none;
     }
 
 }
