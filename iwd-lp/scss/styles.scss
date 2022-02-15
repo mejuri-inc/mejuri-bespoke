@@ -558,9 +558,14 @@ html {
 
             &__image {
                 grid-area: why__image;
+                position: relative;
 
                 figure {
                     position: relative;
+
+                    @media (min-width: 1024px) {
+                        position: absolute;
+                    }
                 }
 
                 figcaption {
@@ -594,7 +599,7 @@ html {
 
             &__product__images {
                 display: grid;
-                grid-template-columns: 143px 185px;
+                grid-template-columns: repeat(2, 143px);
                 grid-template-rows: 1fr;
                 grid-area: why__product__images;
                 margin-bottom: 35px;
@@ -602,6 +607,11 @@ html {
                 &.fade-in {
                     animation-delay: .20s;
                 }
+
+                @media (min-width: 375px) {
+                    grid-template-columns: 143px 185px;
+                }
+
 
                 @media (min-width: 768px) {
                     justify-content: initial;
@@ -660,6 +670,7 @@ html {
                     grid-template-columns: auto max-content;
                     margin: 0;
                     place-items: center self-start;
+                    width: fit-content;
 
                     @media (min-width: 768px) {
                         grid-template-columns: 325px max-content;
