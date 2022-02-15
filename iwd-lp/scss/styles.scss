@@ -248,7 +248,7 @@ html {
                 z-index: 1;
 
                 img {
-                    animation: hero-img-animation 1s backwards;
+                    animation: hero-img-animation 1s backwards 1s;
 
                     &:nth-of-type(1) {
                         grid-area: img1;
@@ -270,11 +270,9 @@ html {
 
                     &:nth-of-type(2) {
                         grid-area: img2;
-                        animation-delay: .25s;
+                        animation-delay: 1.25s;
                         width: 118px;
                         place-self: start end;
-/*                         position: relative;
-                        top: 40px; */
 
                         @media (max-height: 720px) {
                             width: calc(118px - 18%);
@@ -282,8 +280,8 @@ html {
 
                         @media (min-width: 1024px) {
                             width: 187px;
-/*                             top: 0;
-                            right: 123px; */
+                            position: relative;
+                            right: 123px;
                         }
 
                         @media (min-width: 1024px) and (max-height: 860px) {
@@ -293,11 +291,9 @@ html {
 
                     &:nth-of-type(3) {
                         grid-area: img3;
-                        animation-delay: .50s;
+                        animation-delay: 1.50s;
                         width: 132px;
                         place-self: end start;
-/*                         position: relative;
-                        bottom: 102px; */
 
                         @media (max-height: 720px) {
                             width: calc(132px - 18%);
@@ -305,26 +301,25 @@ html {
 
                         @media (min-width: 1024px) {
                             width: 247px;
-                            //bottom: 107px;
+                            position: relative;
+                            bottom: 107px;
                         }
 
                         @media (min-width: 1024px) and (max-height: 860px) {
                             width: calc(247px - 18%);
                         }
 
-/*                         @media (min-width: 1440px) {
+                        @media (min-width: 1440px) {
                             bottom: 0;
                             left: 145px;
-                        } */
+                        }
                     }
 
                     &:nth-of-type(4) {
                         grid-area: img4;
-                        animation-delay: .75s;
+                        animation-delay: 1.75s;
                         width: 134px;
                         place-self: end;
-/*                         position: relative;
-                        bottom: 44px; */
 
                         @media (max-height: 720px) {
                             width: calc(134px - 18%);
@@ -332,16 +327,17 @@ html {
 
                         @media (min-width: 1024px) {
                             width: 272px;
-                            //bottom: 140px;
+                            position: relative;
+                            bottom: 140px;
                         }
 
                         @media (min-width: 1024px) and (max-height: 860px) {
                             width: calc(272px - 18%);
                         }
 
-/*                         @media (min-width: 1440px) {
+                        @media (min-width: 1440px) {
                             bottom: 0;
-                        } */
+                        }
                     }
                 }
             }
@@ -360,7 +356,7 @@ html {
                     font-size: 30px;
                     line-height: 41px;
                     text-transform: uppercase;
-                    animation: fade-in 2s linear 1.5s both;
+                    animation: fade-in 2s linear 1.50s both;
 
                     @media (min-width: 375px) {
                         font-size: 40px;
@@ -423,19 +419,23 @@ html {
 
                         &.animated {
                             opacity: 0;
-                            animation: hero-word-animation 5s step-start infinite;
                             position: absolute;
+                            animation: hero-word-animation 10s step-start infinite;
+
+                            &:nth-child(1) {
+                                animation-delay: 1s;
+                            }
 
                             &:nth-child(2) {
-                                animation-delay: 6s;
+                                animation-delay: 3s;
                             }
 
                             &:nth-child(3) {
-                                animation-delay: 7s;
+                                animation-delay: 5s;
                             }
 
                             &:nth-child(4) {
-                                animation-delay: 8s;
+                                animation-delay: 7s;
                             }
 
                             &:nth-child(5) {
@@ -454,7 +454,7 @@ html {
                     color: #959595;
                     max-width: 290px;
                     text-align: center;
-                    animation: fade-in .8s linear 4s both;
+                    animation: fade-in .8s linear 2s both;
 
                     @media (min-width: 768px) {
                         font-size: 18px;
