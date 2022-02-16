@@ -245,6 +245,7 @@ html {
             display: grid;
             position: relative;
             place-items: center;
+            z-index: 0;
 
             &__images {
                 position: absolute;
