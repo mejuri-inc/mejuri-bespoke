@@ -136,7 +136,7 @@ html {
   opacity: 0;
 }
 .iwd-lp .faded-activated {
-  transition: opacity 0.3s, transform 0.4s, color 2s 0.4s;
+  transition: opacity 0.4s, transform 0.55s, color 2s 0.55s;
   opacity: 1;
   transform: translateY(0);
 }
