@@ -241,11 +241,14 @@ html {
         /* ------HERO SECTION------  */
 
         &__hero {
-            min-height: calc(100vh - 120px);
             display: grid;
             position: relative;
             place-items: center;
             z-index: 0;
+
+            @media (min-width: 768px) {
+                min-height: calc(100vh - 120px);
+            }
 
             &__images {
                 position: absolute;
@@ -266,10 +269,6 @@ html {
                         grid-area: img1;
                         width: 134px;
 
-                        @media (max-height: 720px) {
-                            width: calc(134px - 18%);
-                        }
-
                         @media (min-width: 1024px) {
                             width: 235px;
                         }
@@ -285,9 +284,10 @@ html {
                         animation-delay: 1.25s;
                         width: 118px;
                         place-self: start end;
+                        margin-top: 40px;
 
-                        @media (max-height: 720px) {
-                            width: calc(118px - 18%);
+                        @media (min-width: 768px) {
+                            margin-top: 0;
                         }
 
                         @media (min-width: 1024px) {
@@ -302,15 +302,17 @@ html {
                         animation-delay: 1.50s;
                         width: 132px;
                         place-self: end start;
+                        margin-bottom: 250px;
 
-                        @media (max-height: 720px) {
-                            width: calc(132px - 18%);
+                        @media (min-width: 768px) {
+                            margin-bottom: 40px;
                         }
 
                         @media (min-width: 1024px) {
-                            width: 247px;
+                            width: 217px;
                             position: relative;
-                            bottom: 107px;
+                            bottom: 67px;
+                            margin-bottom: 0;
                         }
 
                         @media (min-width: 1440px) {
@@ -324,15 +326,17 @@ html {
                         animation-delay: 1.75s;
                         width: 134px;
                         place-self: end;
+                        margin-bottom: 260px;
 
-                        @media (max-height: 720px) {
-                            width: calc(134px - 18%);
+                        @media (min-width: 768px) {
+                            margin-bottom: 60px;
                         }
-
+                        
                         @media (min-width: 1024px) {
-                            width: 272px;
+                            width: 232px;
                             position: relative;
-                            bottom: 140px;
+                            bottom: 100px;
+                            margin-bottom: 0;
                         }
 
                         @media (min-width: 1440px) {
@@ -347,6 +351,17 @@ html {
                 place-items: center;
                 text-align: center;
                 z-index: 2;
+                margin-top: 165px;
+
+
+                @media (min-width: 550px) {
+                    margin-top: 110px;
+                }
+
+                @media (min-width: 768px) {
+                    margin-top: 0;
+                }
+
                 @media (min-width: 1024px) and (max-width: 1439px) {
                     position: relative;
                     top: 60px;
@@ -357,14 +372,14 @@ html {
                     font-family: "KapraNeue", sans-serif;
                     font-weight: 600;
                     font-style: normal;
-                    font-size: 30px;
-                    line-height: 41px;
+                    font-size: 60px;
+                    line-height: 71px;
                     text-transform: uppercase;
                     animation: fade-in 2s linear 1.50s both;
 
                     @media (min-width: 375px) {
-                        font-size: 40px;
-                        line-height: 51px;
+                        font-size: 60px;
+                        line-height: 75px;
                     }
 
                     @media (min-width: 768px) {
@@ -384,10 +399,10 @@ html {
                     }
 
                     span {
-                        min-width: 130px;
+                        min-width: 270px;
 
                         @media (min-width: 375px) {
-                            min-width: 200px;
+                            min-width: 270px;
                         }
 
                         @media (min-width: 768px) {
@@ -399,18 +414,12 @@ html {
 
                             &::before {
                                 content: "";
-                                border-bottom: 1px solid #fff;
+                                border-bottom: 2px solid #fff;
                                 height: 1px;
                                 position: absolute;
-                                left: 60px;
-                                top: 37px;
-                                width: 130px;
-
-                                @media (min-width: 375px) {
-                                    width: 200px;
-                                    left: 85px;
-                                    top: 45px;
-                                }
+                                width: 290px;
+                                left: 0;
+                                top: 143px;
 
                                 @media (min-width: 768px) {
                                     left: 200px;
@@ -419,7 +428,14 @@ html {
                                 }
                             }
                         }
+                        
+                        &.word{
+                            display: block;
 
+                            @media (min-width: 768px) {
+                                display: inline;
+                            }
+                        }
 
                         &.animated {
                             opacity: 0;
@@ -445,9 +461,14 @@ html {
                             &:nth-child(5) {
                                 animation-delay: 9s;
                             }
+
+                            &:nth-child(6) {
+                                animation-delay: 11s;
+                            }
                         }
                     }
 
+                    
                 }
 
                 h2 {
@@ -459,6 +480,17 @@ html {
                     max-width: 290px;
                     text-align: center;
                     animation: fade-in .8s linear 2s both;
+                    margin-top: 260px;
+                    margin-bottom: 90px;
+                
+                    @media (min-width: 550px) {
+                        margin-top: 200px;
+                    }
+
+                    @media (min-width: 768px) {
+                        margin-top: 0;
+                        margin-bottom: 0;
+                    }
 
                     @media (min-width: 768px) {
                         font-size: 18px;
@@ -490,7 +522,7 @@ html {
                     display: inline-block;
                 }
 
-                &:hover .arrow__animation {
+                .arrow__animation {
                     animation: hero-arrow-animation 1.5s infinite;
                 }
             }
