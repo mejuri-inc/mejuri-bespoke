@@ -268,7 +268,12 @@ html {
 
                     &:nth-of-type(1) {
                         grid-area: img1;
-                        width: 134px;
+                        width: 114px;
+                        margin-top: -6px;
+
+                        @media (min-width: 768px) {
+                            margin-top: 0;
+                        }
 
                         @media (min-width: 1024px) {
                             width: 235px;
@@ -283,9 +288,9 @@ html {
                     &:nth-of-type(2) {
                         grid-area: img2;
                         animation-delay: 1.25s;
-                        width: 118px;
+                        width: 115px;
                         place-self: start end;
-                        margin-top: 40px;
+                        margin-top: 36px;
 
                         @media (min-width: 768px) {
                             margin-top: 0;
@@ -303,7 +308,7 @@ html {
                         animation-delay: 1.50s;
                         width: 132px;
                         place-self: end start;
-                        margin-bottom: 250px;
+                        margin-bottom: 180px;
 
                         @media (min-width: 768px) {
                             margin-bottom: 40px;
@@ -327,7 +332,7 @@ html {
                         animation-delay: 1.75s;
                         width: 134px;
                         place-self: end;
-                        margin-bottom: 260px;
+                        margin-bottom: 220px;
 
                         @media (min-width: 768px) {
                             margin-bottom: 60px;
@@ -352,7 +357,7 @@ html {
                 place-items: center;
                 text-align: center;
                 z-index: 2;
-                margin-top: 165px;
+                margin-top: 100px;
 
 
                 @media (min-width: 550px) {
@@ -487,8 +492,8 @@ html {
                     max-width: 290px;
                     text-align: center;
                     animation: fade-in .8s linear 2s both;
-                    margin-top: 260px;
-                    margin-bottom: 90px;
+                    margin-top: 320px;
+                    margin-bottom: 0;
                 
                     @media (min-width: 550px) {
                         margin-top: 200px;
@@ -519,6 +524,11 @@ html {
                 position: absolute;
                 bottom: 0;
                 z-index: 2;
+                display: none;
+
+                @media (min-width: 768px) {
+                   display: block;
+                }
 
                 &__animation {
                     width: 20px;

@@ -1,6 +1,6 @@
 @font-face {
   font-family: "PPEditorialNew";
-  src: url("../fonts/PPEditorialNew-Regular.woff2") format("woff2"), url("../fonts/PPEditorialNew-Regular.woff") format("woff");
+  src: url("https://static.mejuri.com/front-assets/production/bespoke-fonts/PPEditorialNew-Regular.woff2") format("woff2"), url("https://static.mejuri.com/front-assets/production/bespoke-fonts/PPEditorialNew-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: fallback;
@@ -383,7 +383,13 @@ html {
 }
 .iwd-lp .section__hero__images img:nth-of-type(1) {
   grid-area: img1;
-  width: 134px;
+  width: 114px;
+  margin-top: -6px;
+}
+@media (min-width: 768px) {
+  .iwd-lp .section__hero__images img:nth-of-type(1) {
+    margin-top: 0;
+  }
 }
 @media (min-width: 1024px) {
   .iwd-lp .section__hero__images img:nth-of-type(1) {
@@ -398,9 +404,9 @@ html {
 .iwd-lp .section__hero__images img:nth-of-type(2) {
   grid-area: img2;
   animation-delay: 1.25s;
-  width: 118px;
+  width: 115px;
   place-self: start end;
-  margin-top: 40px;
+  margin-top: 36px;
 }
 @media (min-width: 768px) {
   .iwd-lp .section__hero__images img:nth-of-type(2) {
@@ -419,7 +425,7 @@ html {
   animation-delay: 1.5s;
   width: 132px;
   place-self: end start;
-  margin-bottom: 250px;
+  margin-bottom: 180px;
 }
 @media (min-width: 768px) {
   .iwd-lp .section__hero__images img:nth-of-type(3) {
@@ -445,7 +451,7 @@ html {
   animation-delay: 1.75s;
   width: 134px;
   place-self: end;
-  margin-bottom: 260px;
+  margin-bottom: 220px;
 }
 @media (min-width: 768px) {
   .iwd-lp .section__hero__images img:nth-of-type(4) {
@@ -470,7 +476,7 @@ html {
   place-items: center;
   text-align: center;
   z-index: 2;
-  margin-top: 165px;
+  margin-top: 100px;
 }
 @media (min-width: 550px) {
   .iwd-lp .section__hero__content {
@@ -599,8 +605,8 @@ html {
   max-width: 290px;
   text-align: center;
   animation: fade-in 0.8s linear 2s both;
-  margin-top: 260px;
-  margin-bottom: 90px;
+  margin-top: 320px;
+  margin-bottom: 0;
 }
 @media (min-width: 550px) {
   .iwd-lp .section__hero__content h2 {
@@ -631,6 +637,12 @@ html {
   position: absolute;
   bottom: 0;
   z-index: 2;
+  display: none;
+}
+@media (min-width: 768px) {
+  .iwd-lp .section__hero .arrow {
+    display: block;
+  }
 }
 .iwd-lp .section__hero .arrow__animation {
   width: 20px;

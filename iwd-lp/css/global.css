@@ -466,11 +466,17 @@ button svg {
 .header {
   width: 100%;
   background: white;
-  height: 80px;
+  height: 55px;
   text-align: center;
   overflow: hidden;
+
+ 
 }
 
+@media (min-width: 768px) {
+  .header{ height: 80px;}
+ 
+}
 .header .logo {
   width: 190px;
   margin: 0 auto;
